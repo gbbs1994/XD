@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volkswagen Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .login-container { width: 300px; margin: 100px auto; }
+        input { display: block; width: 100%; margin: 10px 0; padding: 8px; }
+        button { width: 100%; padding: 10px; background: blue; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>Bienvenido a Volkswagen</h2>
+    <div class="login-container">
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Iniciar sesión</button>
+    </div>
+    <script>
+        const users = {
+            "usuario1": "clave123",
+            "usuario2": "vwpass",
+            "usuario3": "autosVW2024"
+        };
+        
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (users[username] && users[username] === password) {
+                alert("Inicio de sesión exitoso. Bienvenido " + username);
+            } else {
+                alert("Usuario o contraseña incorrectos.");
+            }
+        }
+    </script>
+</body>
+</html>
