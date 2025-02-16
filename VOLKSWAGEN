@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Volkswagen</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .login-container { width: 300px; margin: 100px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input { display: block; width: 100%; margin: 10px 0; padding: 8px; }
+        button { width: 100%; padding: 10px; background: blue; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <h2>Bienvenido a Volkswagen</h2>
+    <div class="login-container">
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contrasena" placeholder="Contraseña">
+        <button onclick="login()">Iniciar sesión</button>
+        <p id="mensaje" style="color: red;"></p>
+    </div>
+    <script>
+        const users = {
+            "usuario1": "clave123",
+            "usuario2": "vwpass",
+            "usuario3": "autosVW2024"
+        };
+        
+        function login() {
+            const usuario = document.getElementById("usuario").value;
+            const contrasena = document.getElementById("contrasena").value;
+            
+            if (users[usuario] === contrasena) {
+                window.location.href = "./inicio.html"; // Asegura que el archivo esté en la misma carpeta
+            } else {
+                document.getElementById("mensaje").innerText = "Usuario o contraseña incorrectos";
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- inicio.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volkswagen - Inicio</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f0f0; }
+        .header { background: blue; color: white; padding: 20px; font-size: 24px; }
+        .content { margin: 50px; }
+    </style>
+</head>
+<body>
+    <div class="header">Bienvenido a Volkswagen</div>
+    <div class="content">
+        <h2>Explora nuestros modelos</h2>
+        <p>Descubre la mejor tecnología y diseño en nuestros autos.</p>
+        <a href="index.html">Cerrar sesión</a>
+    </div>
+</body>
+</html>
